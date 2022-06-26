@@ -1,0 +1,3 @@
+[submodule "CS465-fullstack"]
+	path = CS465-fullstack
+	url = https://github.com/couringtonj/CS465-fullstack.git
