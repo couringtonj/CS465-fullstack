@@ -42,7 +42,11 @@ const tripsFindByCode=async(req,res)=>{
 };
 
 const tripsAddTrip=async(req,res)=>{
+    getUser(req,res,
+        (req,res)=>{
     mongoose.model
+
+    Trip
     .create({
         code:req.body.code,
         name:req.body.name,
@@ -65,8 +69,13 @@ const tripsAddTrip=async(req,res)=>{
         }
     });
 }
+    );
+}
+
 const tripsUpdateTrip=async(req,res)=>{
     console.log(req.body);
+    getUser(req,res,
+        (req,res)=>{
     mongoose.model
     .findOneAndUpdate({'code':req.params.tripCode},{
         code:req.body.code,
@@ -101,6 +110,8 @@ const tripsUpdateTrip=async(req,res)=>{
             .json(err)
     });
 
+}
+    );
 }
 modules.export={
     tripsList,
